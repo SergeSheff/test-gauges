@@ -1,0 +1,17 @@
+:host {
+  border: #a7cce9 2px solid;
+  border-radius: 3%;
+  background: #f7fcff;
+
+  .gauge-title {
+    text-align: center;
+    font-weight: 600;
+    position: relative;
+
+    .remove {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+}

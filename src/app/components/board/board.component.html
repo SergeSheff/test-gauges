@@ -1,0 +1,23 @@
+<div fxLayout="column" fxLayoutGap="10px" fxFlex>
+  <div fxLayout="row" fxLayoutGap="5px" fxFlex>
+    <ng-template #gaugesContainer></ng-template>
+  </div>
+  <div fxFlex>
+    <button #btnAdd mat-raised-button fxFlex>
+      <mat-icon>add</mat-icon>Add New Gauge
+    </button>
+  </div>
+  <div fxFlex>
+    <table #tblResults mat-table [dataSource]="guageData">
+
+      <ng-container *ngFor="let disCol of columnsToDisplay; let colIndex = index" [matColumnDef]="disCol">
+        <th mat-header-cell *matHeaderCellDef>{{ChartData.getHeaderCaption(disCol)}}</th>
+        <td mat-cell *matCellDef="let element">{{element[disCol]}}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+      <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+    </table>
+  </div>
+
+</div>
